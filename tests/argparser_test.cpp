@@ -32,7 +32,7 @@ TEST(ArgParserTestSuite, ShortNameTest) {
     ArgParser parser("My Parser");
     parser.AddStringArgument('p', "param1");
 
-    ASSERT_TRUE(parser.Parse(SplitString("app --p=value1")));
+    ASSERT_TRUE(parser.Parse(SplitString("app -p=value1")));
     ASSERT_EQ(parser.GetStringValue("param1"), "value1");
 }
 
@@ -92,7 +92,7 @@ TEST(ArgParserTestSuite, MultiValueTest) {
     ASSERT_TRUE(parser.Parse(SplitString("app --param1=1 --param1=2 --param1=3")));
     ASSERT_EQ(parser.GetIntValue("param1", 0), 1);
     ASSERT_EQ(int_values[1], 2);
-    ASSERT_EQ(int_values[1], 3);
+    ASSERT_EQ(int_values[2], 3);
 }
 
 
