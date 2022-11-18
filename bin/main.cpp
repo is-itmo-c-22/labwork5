@@ -14,7 +14,7 @@ int main(int argc, char** argv) {
     std::vector<int> values;
 
     ArgumentParser::ArgParser parser("Program");
-    parser.AddIntArgument("N").MultiValue(100).Positional().StoreValues(values);
+    parser.AddIntArgument("N").MultiValue(1).Positional().StoreValues(values);
     parser.AddFlag("sum", "add args").StoreValue(opt.sum);
     parser.AddFlag("mult", "multiply args").StoreValue(opt.mult);
     parser.AddHelp('h', "help", "Program accumulate arguments");
