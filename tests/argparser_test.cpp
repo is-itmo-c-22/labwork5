@@ -132,7 +132,7 @@ TEST(ArgParserTestSuite, FlagsTest) {
 TEST(ArgParserTestSuite, PositionalArgTest) {
     ArgParser parser("My Parser");
     std::vector<int> values;
-    parser.AddIntArgument("Param1").MultiValue(1).Positional().StoreValue(values);
+    parser.AddIntArgument("Param1").MultiValue(1).Positional().StoreValues(values);
 
     ASSERT_TRUE(parser.Parse(SplitString("app 1 2 3 4 5")));
     ASSERT_EQ(values[0], 1);
